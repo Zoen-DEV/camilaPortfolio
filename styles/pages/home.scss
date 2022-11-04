@@ -1,0 +1,37 @@
+.home_container {
+  @include flex(row, center, center);
+  background: url("https://www.nationalgeographic.com.es/medio/2015/01/12/motionexposure1_copia_1200x795.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  .info_container {
+    width: 60vw;
+    p {
+      @include flex(column, center, center);
+      font-family: Oswald;
+      color: $color-white;
+      letter-spacing: 1px;
+      width: 20vw;
+      text-align: center;
+      font-size: 20px;
+      text-shadow: 2px 2px 5px $color-black;
+      span {
+        font-weight: 700;
+        font-size: 60px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+    .home_container{
+        .info_container{
+            @include flex(row, center, center);
+            width: 100vw;
+            p{
+                width: 100vw;
+            }
+        }
+    }
+}

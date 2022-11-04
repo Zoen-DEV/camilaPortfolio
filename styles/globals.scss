@@ -1,0 +1,41 @@
+$color-white: #fdfdfd;
+$color-grey: #dadada;
+$color-dark: #232323;
+$color-black: #0d0d0d;
+$color-green: #468590;
+$color-blue: #316e83;
+$color-shadow: #23232390;
+$color-shadow2: #316f835c;
+
+@mixin flex($d, $j, $a){
+  display: flex;
+  flex-direction: $d;
+  justify-content: $j;
+  align-items: $a;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: $color-white;
+    background: $color-dark;
+  }
+}

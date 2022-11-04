@@ -1,0 +1,110 @@
+.nav_container {
+  @include flex(row, flex-end, center);
+  background: linear-gradient(to bottom, $color-dark, transparent);
+  position: fixed;
+  width: 100vw;
+  .toggle_nav {
+    display: none;
+  }
+  .links_responsive{
+    display: none;
+  }
+  .links_fullscreen {
+    @include flex(row, center, center);
+    list-style: none;
+    gap: 20px;
+    width: 25vw;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: $color-white;
+    li {
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px $color-black;
+      .link:hover {
+        color: $color-green;
+      }
+      .proyects_container {
+        @include flex(column, center, flex-start);
+        position: absolute;
+        gap: 10px;
+        padding: 10px 20px 20px 5px;
+      }
+      button {
+        font-size: 20px;
+        background: none;
+        border: none;
+        outline: none;
+        color: $color-white;
+        cursor: pointer;
+        text-shadow: 1px 1px 2px $color-black;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .nav_container {
+    background: none;
+    .links_fullscreen {
+      display: none;
+    }
+    .links_responsive_container {
+        @include flex(column, center, center);
+        background: linear-gradient(to bottom, $color-shadow2, $color-shadow);
+        box-shadow: 0 2px 1px 2px $color-shadow;
+        width: 100vw;
+      .toggle_nav {
+        display: inline-block;
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 40px;
+        user-select: none;
+      }
+      .links_responsive {
+        @include flex(column, flex-start, flex-start);
+        width: 100vw;
+        animation: ease nav 3s;
+        position: relative;
+        align-self: flex-start;
+        list-style: none;
+        position: relative;
+        left: -20px;
+        gap: 10px;
+        color: $color-white;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 20px;
+        li {
+          .proyects_container {
+            @include flex(column, flex-start, flex-start);
+            gap: 5px;
+          }
+          button {
+            font-size: 20px;
+            background: none;
+            border: none;
+            outline: none;
+            color: $color-white;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px $color-black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes nav {
+    0%{
+        position: relative;
+        opacity: 0;
+        left: -70px;
+    }
+    100%{
+        position: relative;
+        opacity: 1;
+        left: -20px;
+    }
+}
