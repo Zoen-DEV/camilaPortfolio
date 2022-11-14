@@ -1,0 +1,187 @@
+.photo_container {
+  @include flex(column, center, center);
+  .photo_head {
+    @include flex(column, flex-end, center);
+    width: 70vw;
+    min-height: 40vh;
+    h1 {
+      font-size: 50px;
+      text-shadow: 1px 1px 2px $color-shadow;
+      letter-spacing: 1px;
+    }
+    ul {
+      @include flex(row, space-evenly, center);
+      list-style: none;
+      width: 90%;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $color-green;
+      li {
+        .category_btn {
+          background: none;
+          border: none;
+          outline: none;
+          border: 2px solid $color-dark;
+          border-radius: 3px;
+          padding: 10px 20px;
+          transition: 0.3s;
+          font-weight: 700;
+          font-size: 17px;
+          text-shadow: 1px 1px 1px $color-shadow;
+          letter-spacing: 2px;
+        }
+        .category_btn:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          box-shadow: 0 0 6px 0px $color-shadow;
+          background-color: $color-green;
+        }
+        .category_btn:active {
+          position: relative;
+          top: 2px;
+        }
+        .arrow_btn{
+            padding: 0;
+            width: 25px;
+            border-radius: 50%;
+            font-size: 30px;
+            background: none;
+            border: none;
+            text-shadow: 1px 1px 2px $color-shadow;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .arrow_btn:hover{
+            color: $color-green;
+            transform: scale(1.1);
+        }
+      }
+    }
+  }
+  //   GALERIA DE IMAGENES CON SOLO GRID EN DISTINTOS TAMAÑOS
+  .galery {
+    width: 75vw;
+    margin: 30px 0 50px 0;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(20, 5vw);
+    .gallery__item:hover{
+        img{
+            filter: brightness(80%);
+            cursor: pointer;
+        }
+    }
+    .gallery__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: ease images 3s;
+    }
+    .gallery__item--1 {
+      grid-column-start: 1;
+      grid-column-end: 10;
+      grid-row-start: 1;
+      grid-row-end: 7;
+      img {
+        border-radius: 5px 5px 0 0;
+      }
+    }
+    .gallery__item--2 {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 7;
+      grid-row-end: 10;
+    }
+    .gallery__item--3 {
+      grid-column-start: 6;
+      grid-column-end: 10;
+      grid-row-start: 7;
+      grid-row-end: 13;
+    }
+    .gallery__item--4 {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 10;
+      grid-row-end: 13;
+    }
+    .gallery__item--5 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 13;
+      grid-row-end: 18;
+    }
+    .gallery__item--6 {
+      grid-column-start: 4;
+      grid-column-end: 7;
+      grid-row-start: 13;
+      grid-row-end: 18;
+    }
+    .gallery__item--7 {
+      grid-column-start: 7;
+      grid-column-end: 10;
+      grid-row-start: 13;
+      grid-row-end: 18;
+    }
+    .gallery__item--8 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 18;
+      grid-row-end: 22;
+      img {
+        border-radius: 0 0 0 5px;
+      }
+    }
+    .gallery__item--9 {
+      grid-column-start: 5;
+      grid-column-end: 10;
+      grid-row-start: 18;
+      grid-row-end: 22;
+      img {
+        border-radius: 0 0 5px 0;
+      }
+    }
+  }
+
+  //   GALERIA DE IMAGENES CON FLEX RESPONSIVE
+  //   height: 100vh;
+  //   .galery {
+  //     width: 80vw;
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     padding: 0 4px;
+  //     justify-content: space-evenly;
+  //     .column {
+  //       flex: 25%;
+  //       max-width: 25%;
+  //       padding: 0 4px;
+  //       img {
+  //         margin-top: 8px;
+  //         vertical-align: middle;
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+}
+
+// @media screen and (max-width: 800px) {
+//   .column {
+//     flex: 50%;
+//     max-width: 50%;
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .column {
+//     flex: 100%;
+//     max-width: 100%;
+//   }
+// }
+
+// ANIMATIONS
+@keyframes images {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

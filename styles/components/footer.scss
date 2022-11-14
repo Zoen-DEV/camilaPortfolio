@@ -1,0 +1,25 @@
+footer{
+    @include flex(column, flex-start, center);
+    border-top: 1px solid $color-dark;
+    width: 80vw;
+    margin: auto;
+    ul{
+        @include flex(row, space-evenly, center);
+        list-style: none;
+        // background-color: lightblue;
+        width: 70vw;
+        margin: 10px;
+        a:hover{
+            color: $color-green;
+        }
+    }
+    p{
+        // background-color: lightcoral;
+        margin: 0;
+        font-size: 12px;
+        margin-bottom: 5px;
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}

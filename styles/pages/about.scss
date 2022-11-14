@@ -1,0 +1,39 @@
+.about_container {
+  @include flex(column, center, center);
+  height: 100vh;
+  width: 95vw;
+  margin: auto;
+  article {
+    @include flex(row, space-evenly, flex-start);
+    width: 80vw;
+    img {
+      border-radius: 3px;
+      width: 600px;
+      height: 380px;
+      object-fit: cover;
+    }
+    .main_info{
+        @include flex(column, space-evenly, flex-start);
+        width: 40%;
+        height: 100%;
+        h1{
+            font-size: 50px;
+            text-shadow: 2px 2px 2px $color-shadow;
+            margin: 0;
+        }
+        p{
+            font-size: 20px;
+            padding-left: 10px;
+        }
+        .link{
+            align-self: flex-end;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .link:hover{
+            color: $color-green;
+            transform: scale(1.1);
+        }
+    }
+  }
+}
